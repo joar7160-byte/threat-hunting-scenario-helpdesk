@@ -38,6 +38,7 @@ DeviceProcessEvents
 <img width="1585" height="721" alt="image" src="https://github.com/user-attachments/assets/d1b98549-ab35-4e17-9c1d-b8c8ae6e83aa" />
 
 Question: Identify the most suspicious machine based on the given conditions.
+
 Answer: gab-intern-vm
 
 🚩 1. Initial Execution Detection
