@@ -87,6 +87,7 @@ DeviceProcessEvents
 <img width="1538" height="476" alt="image" src="https://github.com/user-attachments/assets/cc52cf93-9747-4893-8fd6-3d100b70e2bd" />
 
 Question: Provide the command value tied to this exploit.
+
 Answer: "powershell.exe" -NoProfile -Sta -Command "try { Get-Clipboard | Out-Null } catch { }"
 
 🚩 4. Host Context Recon
