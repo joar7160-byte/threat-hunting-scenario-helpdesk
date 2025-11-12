@@ -18,14 +18,14 @@ The investigation aimed to **identify the initial point of compromise**, **analy
 ---
 
 ## High-Level IoC Discovery Plan
-- **Check `DeviceProcessEvents`** to identify the suspicious machine, execution chain, and reconnaissance activity.  
-- **Check `DeviceFileEvents`** to locate tampering, artifact creation, and planted narrative files.  
-- **Check `DeviceNetworkEvents`** to track outbound communication and exfiltration attempts.
+- Check **DeviceProcessEvents** to identify the suspicious machine, execution chain, and reconnaissance activity.  
+- Check **DeviceFileEvents** to locate tampering, artifact creation, and planted narrative files.  
+- Check **DeviceNetworkEvents** to track outbound communication and exfiltration attempts.
 
 ---
 
 ## Starting Point
-The issue began in the first half of October. Using `DeviceProcessEvents`, we searched for any executables launched from the **Downloads** folder that contained helpdesk-related keywords.  
+The issue began in the first half of October. Using DeviceProcessEvents, we searched for any executables launched from the Downloads folder that contained helpdesk-related keywords.  
 This helped pinpoint the most suspicious endpoint for deeper investigation.
 
 ```kql
@@ -105,7 +105,7 @@ DeviceProcessEvents
 | project TimeGenerated, DeviceName, AccountName, FolderPath, ProcessCommandLine
 | order by TimeGenerated asc
 Question: Provide the 2nd command tied to this activity.
-Answer: "cmd.exe" /c wmic logicaldisk get name,freespace,size"
+Answer: "cmd.exe" /c wmic logicaldisk get name,freespace,size
 
 🚩 6. Connectivity & Name Resolution Check
 We verified whether the attacker tested external connectivity using common diagnostic commands.
@@ -224,9 +224,9 @@ Flag	Description	Value
 Start	Suspicious Machine	gab-intern-vm
 1	1st CLI parameter used in execution	-ExecutionPolicy
 2	File related to exploit	DefenderTamperArtifact.lnk
-3	Exploit command value	`"powershell.exe" -NoProfile -Sta -Command "try { Get-Clipboard
+3	Exploit command value	"powershell.exe" -NoProfile -Sta -Command "try { Get-Clipboard
 4	Last recon attempt	2025-10-09T12:51:44.3425653Z
-5	2nd command tied to mapping	"cmd.exe" /c wmic logicaldisk get name,freespace,size"
+5	2nd command tied to mapping	"cmd.exe" /c wmic logicaldisk get name,freespace,size
 6	Initiating parent process	RuntimeBroker.exe
 7	Process unique ID	2533274790397065
 8	Process inventory	tasklist.exe
