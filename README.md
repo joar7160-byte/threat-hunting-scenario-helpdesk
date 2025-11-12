@@ -1,32 +1,31 @@
 # Threat Hunt Report: Helpdesk Deception
 **Participant:** Joarder Rashid  
-**Date:** November 2025
+**Date:** November 2025  
 
 ---
 
 ## Platforms and Languages Leveraged
 - Log Analytics Workspaces (Microsoft Azure)  
-- Kusto Query Language (KQL)
+- Kusto Query Language (KQL)  
 
 ---
 
 ## Scenario
 In early October 2025, several **intern and employee machines** in the Helpdesk department began showing suspicious behavior. Multiple systems executed programs directly from their **Downloads** directories — an abnormal pattern for enterprise devices. These executables shared similar names such as *desk*, *help*, *support*, and *tool*, indicating a deceptive “Helpdesk Utility” lure designed to trick users into running malicious files.
 
-The investigation aimed to **identify the initial point of compromise**, **analyze attacker behavior across stages**, and **eradicate persistence mechanisms** used to maintain access within the environment.
+The investigation aimed to **identify the initial point of compromise**, **analyze attacker behavior across stages**, and **eradicate persistence mechanisms** used to maintain access within the environment.  
 
 ---
 
 ## High-Level IoC Discovery Plan
 - Check **DeviceProcessEvents** to identify the suspicious machine, execution chain, and reconnaissance activity.  
 - Check **DeviceFileEvents** to locate tampering, artifact creation, and planted narrative files.  
-- Check **DeviceNetworkEvents** to track outbound communication and exfiltration attempts.
+- Check **DeviceNetworkEvents** to track outbound communication and exfiltration attempts.  
 
 ---
 
 ## Starting Point
-The issue began in the first half of October. Using DeviceProcessEvents, we searched for any executables launched from the Downloads folder that contained helpdesk-related keywords.  
-This helped pinpoint the most suspicious endpoint for deeper investigation.
+The issue began in the first half of October. Using **DeviceProcessEvents**, we searched for any executables launched from the Downloads folder that contained helpdesk-related keywords. This helped pinpoint the most suspicious endpoint for deeper investigation.
 
 ```kql
 DeviceProcessEvents
