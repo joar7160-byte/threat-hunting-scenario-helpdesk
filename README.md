@@ -219,24 +219,25 @@ Question: Identify the file name of the artifact left behind.
 Answer: SupportChat_log.lnk
 `````
 
-Summary Table
-Flag	Description	Value
-Start	Suspicious Machine	gab-intern-vm
-1	1st CLI parameter used in execution	-ExecutionPolicy
-2	File related to exploit	DefenderTamperArtifact.lnk
-3	Exploit command value	"powershell.exe" -NoProfile -Sta -Command "try { Get-Clipboard
-4	Last recon attempt	2025-10-09T12:51:44.3425653Z
-5	2nd command tied to mapping	"cmd.exe" /c wmic logicaldisk get name,freespace,size
-6	Initiating parent process	RuntimeBroker.exe
-7	Process unique ID	2533274790397065
-8	Process inventory	tasklist.exe
-9	Privilege-check timestamp	2025-10-09T12:52:14.3135459Z
-10	1st outbound destination	www.msftconnecttest.com
-11	Artifact path	C:\Users\Public\ReconArtifacts.zip
-12	Unusual outbound IP	100.29.147.161
-13	Scheduled task name	SupportToolUpdater
-14	Registry value name	RemoteAssistUpdater
-15	Artifact left behind	SupportChat_log.lnk
+| Flag  | Description                         | Value                                                          |                       |
+| ----- | ----------------------------------- | -------------------------------------------------------------- | --------------------- |
+| Start | Suspicious Machine                  | gab-intern-vm                                                  |                       |
+| 1     | 1st CLI parameter used in execution | -ExecutionPolicy                                               |                       |
+| 2     | File related to exploit             | DefenderTamperArtifact.lnk                                     |                       |
+| 3     | Exploit command value               | "powershell.exe" -NoProfile -Sta -Command "try { Get-Clipboard | Out-Null } catch { }" |
+| 4     | Last recon attempt                  | 2025-10-09T12:51:44.3425653Z                                   |                       |
+| 5     | 2nd command tied to mapping         | "cmd.exe" /c wmic logicaldisk get name,freespace,size          |                       |
+| 6     | Initiating parent process           | RuntimeBroker.exe                                              |                       |
+| 7     | Process unique ID                   | 2533274790397065                                               |                       |
+| 8     | Process inventory                   | tasklist.exe                                                   |                       |
+| 9     | Privilege-check timestamp           | 2025-10-09T12:52:14.3135459Z                                   |                       |
+| 10    | 1st outbound destination            | [www.msftconnecttest.com](http://www.msftconnecttest.com)      |                       |
+| 11    | Artifact path                       | C:\Users\Public\ReconArtifacts.zip                             |                       |
+| 12    | Unusual outbound IP                 | 100.29.147.161                                                 |                       |
+| 13    | Scheduled task name                 | SupportToolUpdater                                             |                       |
+| 14    | Registry value name                 | RemoteAssistUpdater                                            |                       |
+| 15    | Artifact left behind                | SupportChat_log.lnk                                            |                       |
+
 
 Report Completed By: Joarder Rashid
 Status: ✅ All 15 flags investigated and confirmed
