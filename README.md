@@ -55,6 +55,7 @@ DeviceProcessEvents
 <img width="1553" height="724" alt="image" src="https://github.com/user-attachments/assets/f6d26a9e-ad53-4f1c-860d-ec92dcddb168" />
 
 Question: What was the first CLI parameter name used during execution?
+
 Answer: -ExecutionPolicy
 
 🚩 2. Defense Disabling
@@ -71,6 +72,7 @@ DeviceFileEvents
 <img width="1532" height="564" alt="image" src="https://github.com/user-attachments/assets/0ee22edd-5bc2-4af4-9144-17a20b794b5b" />
 
 Question: What was the name of the file related to this exploit?
+
 Answer: DefenderTamperArtifact.lnk
 
 🚩 3. Quick Data Probe
@@ -105,6 +107,7 @@ DeviceProcessEvents
 <img width="1475" height="501" alt="image" src="https://github.com/user-attachments/assets/1b380eca-bdef-45b5-bc94-784dafd7c75b" />
 
 Question: Point out when the last recon attempt occurred.
+
 Answer: 2025-10-09T12:51:44.3425653Z
 
 🚩 5. Storage Surface Mapping
@@ -121,6 +124,7 @@ DeviceProcessEvents
 <img width="1573" height="491" alt="image" src="https://github.com/user-attachments/assets/1d077d67-65c3-4249-960d-af87517ca8c6" />
 
 Question: Provide the 2nd command tied to this activity.
+
 Answer: "cmd.exe" /c wmic logicaldisk get name,freespace,size"
 
 🚩 6. Connectivity & Name Resolution Check
@@ -139,6 +143,7 @@ DeviceProcessEvents
 <img width="1318" height="563" alt="image" src="https://github.com/user-attachments/assets/bc623cdb-83f7-4fc2-baaf-047e9b371ba7" />
 
 Question: Provide the File Name of the initiating parent process.
+
 Answer: RuntimeBroker.exe
 
 🚩 7. Interactive Session Discovery
@@ -154,10 +159,12 @@ DeviceProcessEvents
 <img width="1556" height="586" alt="image" src="https://github.com/user-attachments/assets/4bdb0913-84ca-491d-80cc-4de174290253" />
 
 Question: What is the unique ID of the initiating process?
+
 Answer: 2533274790397065
 
 🚩 8. Runtime Application Inventory
 Question: Provide the file name of the process that best demonstrates a runtime process enumeration event.
+
 Answer: tasklist.exe
 
 🚩 9. Privilege Surface Check
@@ -174,6 +181,7 @@ DeviceProcessEvents
 <img width="1526" height="508" alt="image" src="https://github.com/user-attachments/assets/b484e351-4039-45ea-bb92-947c9c3df292" />
 
 Question: Identify the timestamp of the first attempt.
+
 Answer: 2025-10-09T12:52:14.3135459Z
 
 🚩 10. Proof-of-Access & Egress Validation
@@ -190,6 +198,7 @@ DeviceNetworkEvents
 <img width="1005" height="526" alt="image" src="https://github.com/user-attachments/assets/b39b241e-b87e-4840-b8f8-1775e7c71770" />
 
 Question: Which outbound destination was contacted first?
+
 Answer: www.msftconnecttest.com
 
 🚩 11. Bundling / Staging Artifacts
@@ -207,6 +216,7 @@ DeviceFileEvents
 <img width="1452" height="617" alt="image" src="https://github.com/user-attachments/assets/6ba104f5-ee76-4f72-8d8e-c933ac975dd3" />
 
 Question: Provide the full folder path where the artifact was first dropped.
+
 Answer: C:\Users\Public\ReconArtifacts.zip
 
 🚩 12. Outbound Transfer Attempt (Simulated)
@@ -224,6 +234,7 @@ DeviceNetworkEvents
 <img width="1546" height="560" alt="image" src="https://github.com/user-attachments/assets/fbced72d-483b-4bf8-8cfe-e272612c9743" />
 
 Question: Provide the IP of the last unusual outbound connection.
+
 Answer: 100.29.147.161
 
 🚩 13. Scheduled Re-Execution Persistence
@@ -241,6 +252,7 @@ DeviceProcessEvents
 <img width="1540" height="753" alt="image" src="https://github.com/user-attachments/assets/842af05f-b028-4b31-ace3-1f4d0bbd4fef" />
 
 Question: Provide the value of the task name.
+
 Answer: SupportToolUpdater
 
 🚩 14. Autorun Fallback Persistence
@@ -254,6 +266,7 @@ DeviceRegistryEvents
 `````
 
 Question: What was the name of the registry value associated with autorun persistence?
+
 Answer: RemoteAssistUpdater
 
 🚩 15. Planted Narrative / Cover Artifact
@@ -268,6 +281,7 @@ DeviceFileEvents
 <img width="1572" height="762" alt="image" src="https://github.com/user-attachments/assets/45be2ac4-c3a3-4f69-aa43-c8bcdb498dd7" />
 
 Question: Identify the file name of the artifact left behind.
+
 Answer: SupportChat_log.lnk
 
 | Flag  | Description                         | Value                                                          |                       |
