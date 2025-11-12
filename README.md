@@ -26,7 +26,6 @@ In early October, several intern and employee workstations began spawning unusua
 | **Planted Cover Artifact**   | `SupportChat_log.lnk` dropped to justify anomalous activity                        |
 
 ---
-
 ## Starting Point
 The hunt began by isolating events from early October, filtering for executables with deceptive Helpdesk-related names under Downloads.
 The query revealed that gab-intern-vm launched the first malicious binary using PowerShell with the parameter -ExecutionPolicy, indicating an intentional policy bypass.
@@ -55,33 +54,6 @@ Question: Identify the most suspicious machine based on the given conditions
 <summary>Click to see finding</summary>
   
   Finding: `gab-intern-vm`
-</details>
-
----
-
-### 🚩 1. Initial Execution Detection
-
-Since we have established the most suspicious machine, we need to detect the earliest time it executed unusual code. Again, we use `DeviceProcessEvents` to discover that. This helps us anchor the timeline and follow the parent/child chain.
-
-```kql
-DeviceProcessEvents
-    //search the first half of October 2025
-| where TimeGenerated between (datetime(2025-10-01) .. datetime(2025-10-16))
-    //suspicious machine
-| where DeviceName == "gab-intern-vm"
-    //looking for unusual executions
-| where ProcessCommandLine contains "powershell"
-| project TimeGenerated, DeviceName, ProcessCommandLine
-| order by TimeGenerated asc
-```
-<img width="1820" height="390" alt="image" src="https://github.com/user-attachments/assets/84a0a9ff-120b-43da-be66-4d9de293f1f0" />
-
-Question: What was the first CLI parameter name used during the execution of the suspicious program?
-
-<details>
-<summary>Click to see answer</summary>
-  
-  Answer: `-ExecutionPolicy`
 </details>
 
 ---
