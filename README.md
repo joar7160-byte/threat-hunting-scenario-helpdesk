@@ -1,4 +1,4 @@
-# Threat Hunt Report: Helpdesk Deception  
+# Threat Hunt Report: Helpdesk   
 **Participant:** Joarder Rashid  
 **Date:** November 2025  
 
